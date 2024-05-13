@@ -46,9 +46,9 @@ Table of Content:
 /*----------------------------------------------------*/
 @font-face {
     font-family: vazir ;
-    src: url(/fonts/Vazir.eot) ;
-    src: url(/fonts/Vazir.woff) ;
-    src: url(/fonts/Vazir.woff2) ;
+    src: url(../fonts/Vazir.eot) ;
+    src: url(../fonts/Vazir.woff) ;
+    src: url(../fonts/Vazir.woff2) ;
 }
 
 .list {
