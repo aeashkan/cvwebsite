@@ -1,23 +1,24 @@
+{% load static %}
 <!doctype html>
 <html lang="fa">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="img/favicon.png" type="image/png">
+        <link rel="icon" href="{% static 'img//favicon.png' %}" type="image/png">
         <title>قالب رایگان MeetMe :: فارسی و راست چین شده توسط وب روبیک</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="{% static 'css//bootstrap-rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css//font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//popup/magnific-popup.css' %}">
         <!-- main css -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="{% static 'css//style.css' %}">
+        <link rel="stylesheet" href="{% static 'css//responsive.css' %}">
     </head>
     <body>
         
@@ -27,7 +28,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<b><a class="navbar-brand " href="index.html" style="color: white;">آشناشو</a></b>
+						<b><a class="navbar-brand " href="{% url 'website:index'  %}" style="color: white;">آشناشو</a></b>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -36,8 +37,8 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent" >
 							<ul class="nav navbar-nav menu_nav mr-auto"  >
-								<li class="nav-item active"><a class="nav-link" href="index.html">خانه</a></li> 
-								<li class="nav-item"><a class="nav-link" href="about-us.html">درباره ما</a></li> 
+								<li class="nav-item active"><a class="nav-link" href="{% url 'website:index'  %}">خانه</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'website:about'  %}">درباره ما</a></li>
 								<li class="nav-item"><a class="nav-link" href="services.html">خدمات</a></li> 
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">صفحه ها</a>
@@ -53,7 +54,7 @@
 										<li class="nav-item"><a class="nav-link txt-alg-hd" href="single-blog.html">صفحه داخلی</a></li>
 									</ul>
 								</li> 
-								<li class="nav-item"><a class="nav-link" href="contact.html"  >تماس با ما</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'website:contact'  %}"  >تماس با ما</a></li>
 							</ul>
 						</div> 
 					</div>
@@ -70,7 +71,7 @@
 						<div class="banner_content text-center">
 							<h2>جزییات وبلاگ</h2>
 							<div class="page_link">
-								<a href="index.html">خانه</a>
+								<a href="{% url 'website:index'  %}">خانه</a>
 								<a href="blog.html" style="margin-left:30px ;">وبلاگ</a>
 								<a href="single-blog.html">جزییات وبلاگ</a>
 							</div>
@@ -89,7 +90,7 @@
                         <div class="single-post row">
                             <div class="col-lg-12">
                                 <div class="feature-img">
-                                    <img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
+                                    <img class="img-fluid" src="{% static 'img//blog/feature-img1.jpg' %}" alt="">
                                 </div>									
                             </div>
                             <div class="col-lg-3  col-md-3">
@@ -132,10 +133,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <img class="img-fluid" src="img/blog/post-img1.jpg" alt="">
+                                        <img class="img-fluid" src="{% static 'img//blog/post-img1.jpg' %}" alt="">
                                     </div>
                                     <div class="col-6">
-                                        <img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
+                                        <img class="img-fluid" src="{% static 'img//blog/post-img2.jpg' %}" alt="">
                                     </div>	
                                     <div class="col-lg-12 mt-25">
                                         <p>
@@ -160,7 +161,7 @@
                                         <a href="#" style="float: left;"><h4>دنیا علیزاده</h4></a>
                                     </div>
                                     <div class="thumb">
-                                        <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
+                                        <a href="#"><img class="img-fluid" src="{% static 'img//blog/prev.jpg' %}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center" dir="ltr">
@@ -172,7 +173,7 @@
                                         <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
                                     </div>
                                     <div class="thumb">
-                                        <a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
+                                        <a href="#"><img class="img-fluid" src="{% static 'img//blog/next.jpg' %}" alt=""></a>
                                     </div>										
                                 </div>									
                             </div>
@@ -183,7 +184,7 @@
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb cm-padd">
-                                            <img src="img/blog/c1.jpg" alt="">
+                                            <img src="{% static 'img//blog/c1.jpg' %}" alt="">
                                         </div>
                                         <div class="desc">
                                             <h5><a href="#">مینا عابدی</a></h5>
@@ -202,7 +203,7 @@
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb cm-padd">
-                                            <img src="img/blog/c2.jpg" alt="">
+                                            <img src="{% static 'img//blog/c2.jpg' %}" alt="">
                                         </div>
                                         <div class="desc">
                                             <h5><a href="#">احمد محمدی</a></h5>
@@ -221,7 +222,7 @@
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb cm-padd">
-                                            <img src="img/blog/c3.jpg" alt="">
+                                            <img src="{% static 'img//blog/c3.jpg' %}" alt="">
                                         </div>
                                         <div class="desc">
                                             <h5><a href="#">زهرا فاخر</a></h5>
@@ -240,7 +241,7 @@
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb cm-padd">
-                                            <img src="img/blog/c4.jpg" alt="">
+                                            <img src="{% static 'img//blog/c4.jpg' %}" alt="">
                                         </div>
                                         <div class="desc">
                                             <h5><a href="#">غزل رنجبر</a></h5>
@@ -259,7 +260,7 @@
                                 <div class="single-comment justify-content-between d-flex">
                                     <div class="user justify-content-between d-flex">
                                         <div class="thumb cm-padd">
-                                            <img src="img/blog/c5.jpg" alt="">
+                                            <img src="{% static 'img//blog/c5.jpg' %}" alt="">
                                         </div>
                                         <div class="desc" >
                                             <h5><a href="#">رضا فاخر</a></h5>
@@ -308,7 +309,7 @@
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget author_widget">
-                                <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
+                                <img class="author_img rounded-circle" src="{% static 'img//blog/author.png' %}" alt="">
                                 <h4>محمد محمدی</h4>
                                 <p>وبلاگ نویس</p>
                                 <div class="social_icon">
@@ -324,28 +325,28 @@
                         >
                                 <h3 class="widget_title">پست های محبوب</h3>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post1.jpg" alt="post">
+                                    <img src="{% static 'img//blog/popular-post/post1.jpg' %}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html"><h3>تا کجا میشود رفت</h3></a>
                                         <p>۲ ساعت پیش</p>
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post2.jpg" alt="post">
+                                    <img src="{% static 'img//blog/popular-post/post2.jpg' %}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html"><h3>درآمد های ویژه</h3></a>
                                         <p>۲ ساعت پیش</p>
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post3.jpg" alt="post">
+                                    <img src="{% static 'img//blog/popular-post/post3.jpg' %}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html"><h3>سیاره گردی</h3></a>
                                         <p>۳ ساعت پیش</p>
                                     </div>
                                 </div>
                                 <div class="media post_item">
-                                    <img src="img/blog/popular-post/post4.jpg" alt="post">
+                                    <img src="{% static 'img//blog/popular-post/post4.jpg' %}" alt="post">
                                     <div class="media-body">
                                         <a href="blog-details.html"><h3>تلسکوپ مجازی</h3></a>
                                         <p>۱ ساعت پیش</p>
@@ -354,7 +355,7 @@
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget ads_widget">
-                                <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
+                                <a href="#"><img class="img/-fluid" src="{% static 'img//blog/add.jpg' %}" alt=""></a>
                                 <div class="br"></div>
                             </aside>
                             <aside class="single_sidebar_widget post_category_widget">
@@ -503,21 +504,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         
         <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/stellar.js"></script>
-        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-        <script src="vendors/isotope/isotope.pkgd.min.js"></script>
-        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script src="js/theme.js"></script>
+        <!-- jQuery first, then Popper.js' %}, then Bootstrap JS -->
+        <script src="{% static 'js//jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js//popper.js' %}"></script>
+        <script src="{% static 'js//bootstrap.min.js' %}"></script>
+        <script src="{% static 'js//stellar.js' %}"></script>
+        <script src="{% static 'vendors//lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'vendors//nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors//isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors//isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors//owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendors//popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js//jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'vendors//counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors//counter-up/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'js//mail-script.js' %}"></script>
+        <script src="{% static 'js//theme.js' %}"></script>
     </body>
 </html>

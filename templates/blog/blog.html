@@ -1,23 +1,24 @@
+{% load static %}
 <!doctype html>
 <html lang="fa">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="img/favicon.png" type="image/png">
+        <link rel="icon" href="{% static 'img//favicon.png' %}" type="image/png">
         <title>قالب رایگان MeetMe :: فارسی و راست چین شده توسط وب روبیک</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="{% static 'css//bootstrap-rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css//font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//animate-css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors//popup/magnific-popup.css' %}">
         <!-- main css -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="{% static 'css//style.css' %}">
+        <link rel="stylesheet" href="{% static 'css//responsive.css' %}">
     </head>
     <body>
         
@@ -27,7 +28,7 @@
             	<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="container box_1620">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<b><a class="navbar-brand " href="index.html" style="color: white;">آشناشو</a></b>
+						<b><a class="navbar-brand " href="{% url 'website:index'  %}" style="color: white;">آشناشو</a></b>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -36,8 +37,8 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse offset" id="navbarSupportedContent" >
 							<ul class="nav navbar-nav menu_nav mr-auto"  >
-								<li class="nav-item active"><a class="nav-link" href="index.html">خانه</a></li> 
-								<li class="nav-item"><a class="nav-link" href="about-us.html">درباره ما</a></li> 
+								<li class="nav-item active"><a class="nav-link" href="{% url 'website:index'  %}">خانه</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'website:about'  %}">درباره ما</a></li>
 								<li class="nav-item"><a class="nav-link" href="services.html">خدمات</a></li> 
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">صفحه ها</a>
@@ -50,10 +51,10 @@
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="margin-left:30px;" >وبلاگ</a>
 									<ul class="dropdown-menu "  >
 										<li class="nav-item"><a class="nav-link txt-alg-hd" href="blog.html" >وبلاگ</a></li>
-										<li class="nav-item"><a class="nav-link txt-alg-hd" href="single-blog.html">صفحه داخلی</a></li>
+										<li class="nav-item"><a class="nav-link txt-alg-hd" href="{% url 'blog:single'  %}">صفحه داخلی</a></li>
 									</ul>
 								</li> 
-								<li class="nav-item"><a class="nav-link" href="contact.html"  >تماس با ما</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'website:contact'  %}"  >تماس با ما</a></li>
 							</ul>
 						</div> 
 					</div>
@@ -83,7 +84,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="categories_post">
-                            <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
+                            <img src="{% static 'img//blog/cat-post/cat-post-3.jpg' %}" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
                                     <a href="blog-details.html"><h5>زندگی اجتماعی</h5></a>
@@ -95,7 +96,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="categories_post">
-                            <img src="img/blog/cat-post/cat-post-2.jpg" alt="post">
+                            <img src="{% static 'img//blog/cat-post/cat-post-2.jpg' %}" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
                                     <a href="blog-details.html"><h5>سیاست</h5></a>
@@ -107,7 +108,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="categories_post">
-                            <img src="img/blog/cat-post/cat-post-1.jpg" alt="post">
+                            <img src="{% static 'img//blog/cat-post/cat-post-1.jpg' %}" alt="post">
                             <div class="categories_details">
                                 <div class="categories_text">
                                     <a href="blog-details.html"><h5>غذا</h5></a>
@@ -147,11 +148,11 @@
                                </div>
                                 <div class="col-md-9">
                                     <div class="blog_post">
-                                        <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
+                                        <img src="{% static 'img//blog/main-blog/m-blog-1.jpg' %}" alt="">
                                         <div class="blog_details">
-                                            <a href="single-blog.html"><h2>روز خود را با قهوه شروع کنید</h2></a>
+                                            <a href="{% url 'blog:single'  %}"><h2>روز خود را با قهوه شروع کنید</h2></a>
                                             <p>مصرف هر روز قهوه در صبح می تواند به شدت عملکرد جسمی را بهبود بخشد. کافئین می تواند عملکرد سیستم عصبی را تحریک کند و موجب انتقال سیگنال به سلول های چربی به منظور شکستن چربی بدن و آزاد سازی اسید های چرب سلول های چربی به خون و مصرف آنها در بدن به عنوان سوخت شود.</p>
-                                            <a href="single-blog.html" class="white_bg_btn">View More</a>
+                                            <a href="{% url 'blog:single'  %}" class="white_bg_btn">View More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -175,11 +176,11 @@
                                </div>
                                 <div class="col-md-9">
                                     <div class="blog_post">
-                                        <img src="img/blog/main-blog/m-blog-2.jpg" alt="">
+                                        <img src="{% static 'img//blog/main-blog/m-blog-2.jpg' %}" alt="">
                                         <div class="blog_details">
-                                            <a href="single-blog.html"><h2>راه و روش های آرام زندگی کردن</h2></a>
+                                            <a href="{% url 'blog:single'  %}"><h2>راه و روش های آرام زندگی کردن</h2></a>
                                             <p>هروقت وسوسه شدید درباره‌ی زندگی دیگران نظر بدهید، قصد و نیت خود را بررسی کنید. قضاوت دیگران باعث ایجاد و اشاعه‌ی انرژی منفی می‌شود.</p>
-                                            <a href="single-blog.html" class="white_bg_btn">بیشتر بخوانید</a>
+                                            <a href="{% url 'blog:single'  %}" class="white_bg_btn">بیشتر بخوانید</a>
                                         </div>
                                     </div>
                                 </div>
@@ -203,11 +204,11 @@
                                </div>
                                 <div class="col-md-9">
                                     <div class="blog_post">
-                                        <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
+                                        <img src="{% static 'img//blog/main-blog/m-blog-1.jpg' %}" alt="">
                                         <div class="blog_details">
-                                            <a href="single-blog.html"><h2>زندگی خود را از الان شروع کنید</h2></a>
+                                            <a href="{% url 'blog:single'  %}"><h2>زندگی خود را از الان شروع کنید</h2></a>
                                             <p>شاید نخواهید فردی را کاملا از فهرست دوستان‌تان حذف کنید، با این حال می‌توانید انتخاب کنید که آیا می‌خواهید پست‌ها یا منابع اطلاعاتی را که به اشتراک می‌گذارد دنبال کنید یا نه.</p>
-                                            <a href="single-blog.html" class="white_bg_btn">بیشتر بخوانید</a>
+                                            <a href="{% url 'blog:single'  %}" class="white_bg_btn">بیشتر بخوانید</a>
                                         </div>
                                     </div>
                                 </div>
@@ -231,11 +232,11 @@
                                </div>
                                 <div class="col-md-9">
                                     <div class="blog_post">
-                                        <img src="img/blog/main-blog/m-blog-4.jpg" alt="">
+                                        <img src="{% static 'img//blog/main-blog/m-blog-4.jpg' %}" alt="">
                                         <div class="blog_details">
-                                            <a href="single-blog.html"><h2>آسمانی زیبا</h2></a>
+                                            <a href="{% url 'blog:single'  %}"><h2>آسمانی زیبا</h2></a>
                                             <p>زندگی در این دنیا به اندازه‌ی کافی سخت است و بیش از قدر کفایت نکوهش‌گر دارد. اگر یکی از آنها باشید زندگی سودمندی نخواهید داشت.</p>
-                                            <a href="single-blog.html" class="white_bg_btn">بیشتر بخوانید</a>
+                                            <a href="{% url 'blog:single'  %}" class="white_bg_btn">بیشتر بخوانید</a>
                                         </div>
                                     </div>
                                 </div>
@@ -259,11 +260,11 @@
                                </div>
                                 <div class="col-md-9">
                                     <div class="blog_post">
-                                        <img src="img/blog/main-blog/m-blog-5.jpg" alt="">
+                                        <img src="{% static 'img//blog/main-blog/m-blog-5.jpg' %}" alt="">
                                         <div class="blog_details">
-                                            <a href="single-blog.html"><h2>کتاب زندگی</h2></a>
+                                            <a href="{% url 'blog:single'  %}"><h2>کتاب زندگی</h2></a>
                                             <p>آگاهانه تصمیم بگیرید یک روز کامل از هیچ‌چیز گلایه نکنید. شاید از آن‌چه فکر می‌کنید دشوارتر باشد اما این آگاهی با شما خواهدماند.</p>
-                                            <a href="single-blog.html" class="white_bg_btn">بیشتر بخوانید</a>
+                                            <a href="{% url 'blog:single'  %}" class="white_bg_btn">بیشتر بخوانید</a>
                                         </div>
                                     </div>
                                 </div>
@@ -305,7 +306,7 @@
                                     <div class="br"></div>
                                 </aside>
                                 <aside class="single_sidebar_widget author_widget">
-                                    <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
+                                    <img class="author_img rounded-circle" src="{% static 'img//blog/author.png' %}" alt="">
                                     <h4>محمد محمدی</h4>
                                     <p>وبلاگ نویس</p>
                                     <div class="social_icon">
@@ -321,28 +322,28 @@
                             >
                                     <h3 class="widget_title">پست های محبوب</h3>
                                     <div class="media post_item">
-                                        <img src="img/blog/popular-post/post1.jpg" alt="post">
+                                        <img src="{% static 'img//blog/popular-post/post1.jpg' %}" alt="post">
                                         <div class="media-body">
                                             <a href="blog-details.html"><h3>تا کجا میشود رفت</h3></a>
                                             <p>۲ ساعت پیش</p>
                                         </div>
                                     </div>
                                     <div class="media post_item">
-                                        <img src="img/blog/popular-post/post2.jpg" alt="post">
+                                        <img src="{% static 'img//blog/popular-post/post2.jpg' %}" alt="post">
                                         <div class="media-body">
                                             <a href="blog-details.html"><h3>درآمد های ویژه</h3></a>
                                             <p>۲ ساعت پیش</p>
                                         </div>
                                     </div>
                                     <div class="media post_item">
-                                        <img src="img/blog/popular-post/post3.jpg" alt="post">
+                                        <img src="{% static 'img//blog/popular-post/post3.jpg' %}" alt="post">
                                         <div class="media-body">
                                             <a href="blog-details.html"><h3>سیاره گردی</h3></a>
                                             <p>۳ ساع پیش</p>
                                         </div>
                                     </div>
                                     <div class="media post_item">
-                                        <img src="img/blog/popular-post/post4.jpg" alt="post">
+                                        <img src="{% static 'img//blog/popular-post/post4.jpg' %}" alt="post">
                                         <div class="media-body">
                                             <a href="blog-details.html"><h3>تلسکوپ مجازی</h3></a>
                                             <p>۱ ساعت پیش</p>
@@ -351,7 +352,7 @@
                                     <div class="br"></div>
                                 </aside>
                                 <aside class="single_sidebar_widget ads_widget">
-                                    <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
+                                    <a href="#"><img class="img-fluid" src="{% static 'img//blog/add.jpg' %}" alt=""></a>
                                     <div class="br"></div>
                                 </aside>
                                 <aside class="single_sidebar_widget post_category_widget">
@@ -500,21 +501,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         
         
         <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/stellar.js"></script>
-        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-        <script src="vendors/isotope/isotope.pkgd.min.js"></script>
-        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script src="js/theme.js"></script>
+        <!-- jQuery first, then Popper.js' %}, then Bootstrap JS -->
+        <script src="{% static 'js//jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js//popper.js' %}"></script>
+        <script src="{% static 'js//bootstrap.min.js' %}"></script>
+        <script src="{% static 'js//stellar.js' %}"></script>
+        <script src="{% static 'vendors//lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'vendors//nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'vendors//isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors//isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'vendors//owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'vendors//popup/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js//jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'vendors//counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'vendors//counter-up/jquery.counterup.min.js' %}"></script>
+        <script src="{% static 'js//mail-script.js' %}"></script>
+        <script src="{% static 'js//theme.js' %}"></script>
     </body>
 </html>
