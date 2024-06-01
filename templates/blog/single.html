@@ -1,4 +1,5 @@
 {% load static %}
+{% load jformat %}
 <!doctype html>
 <html lang="fa">
     <head>
@@ -89,20 +90,21 @@
                         <div class="single-post row">
                             <div class="col-lg-12">
                                 <div class="feature-img">
-                                    <img class="img-fluid" src="{% static 'img//blog/feature-img1.jpg' %}" alt="">
+                                    <img class="img-fluid" src={{post.image.url}} alt="">
                                 </div>									
                             </div>
                             <div class="col-lg-3  col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
-                                        <a href="#">غدا،</a>
-                                        <a class="active" href="#">تکنولوژی,</a>
-                                        <a href="#">سیاست، </a>
-                                        <a href="#">زندگی</a>
+                                      {% for cat in post.category.all %}
+                                        <a href="#">{{cat.name}}</a>
+                                        {% if not forloop.last %} , {% endif %}
+                                      {% endfor %}
+
                                     </div>
                                     <ul class="blog_meta list" dir="ltr">
                                         <li><a href="#" >{{post.author.get_full_name}}<i class="lnr lnr-user"></i></a></li>
-                                        <li><a href="#" >{{post.published_date|date:"D d M Y"}}<i class="lnr lnr-calendar-full"></i></a></li>
+                                        <li><a href="#" >{{post.published_date|jformat:"%A %d %B %Y %H:%M"}}<i class="lnr lnr-calendar-full"></i></a></li>
                                         <li><a href="#" >{{post.counted_view}}<i class="lnr lnr-eye"></i></a></li>
                                         <li><a href="#" >  کامنت ۶ عدد <i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
@@ -282,19 +284,7 @@
                                 </div><!-- /input-group -->
                                 <div class="br"></div>
                             </aside>
-                            <aside class="single_sidebar_widget author_widget">
-                                <img class="author_img rounded-circle" src="{% static 'img//blog/author.png' %}" alt="">
-                                <h4>محمد محمدی</h4>
-                                <p>وبلاگ نویس</p>
-                                <div class="social_icon">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-github"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
-                                </div>
-                                <p>وبلاگ نویسی به نوعی احترام به بازدید کننده و مخاطب است و شرایطی به وجود می‌آورد که آنها راحت‌تر به اطلاعات مورد نیاز دسترسی داشته باشند.</p>
-                                <div class="br"></div>
-                            </aside>
+                            {% include 'blog/blog-writer.html' %}
                             <aside class="single_sidebar_widget popular_post_widget" س
                         >
                                 <h3 class="widget_title">پست های محبوب</h3>
