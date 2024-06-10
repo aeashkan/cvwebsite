@@ -12,7 +12,12 @@ def blog_view(request):
 
 def single_view(request, pid):
     post = get_object_or_404(Post, pk=pid, status=True, published_date__lte=datetime.now())
-    context = {'post': post}
+    previous_post = Post.objects.filter(published_date__lt=post.published_date).order_by('-published_date').first()
+    next_post = Post.objects.filter(published_date__gt=post.published_date).order_by('published_date').first()
     post.counted_view += 1
     post.save()
+    context = {'post': post,
+               'previous_post': previous_post,
+               'next_post': next_post,
+               }
     return render(request, 'blog/single.html', context)

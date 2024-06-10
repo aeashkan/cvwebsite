@@ -133,23 +133,28 @@
                                         <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
                                     </div>
                                     <div class="detials" style="margin-right:10px ;">
-                                        <p>پست قبلی</p>
-                                        <a href="#" style="float: left;"><h4>دنیا علیزاده</h4></a>
+                                          {% if previous_post %}
+                                            <a href="{% url 'blog:single' previous_post.pk %}">Previous Post: {{ previous_post.title }}</a>
+
                                     </div>
                                     <div class="thumb">
-                                        <a href="#"><img class="img-fluid" src="{% static 'img//blog/prev.jpg' %}" alt=""></a>
+                                        <a class="imgnextpage" href="{% url 'blog:single' previous_post.pk %}"><img src="{{post.image.url}}" alt=""></a>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center" dir="ltr">
                                     <div class="detials">
-                                        <p>پست بعدی</p>
-                                        <a href="#"><h4>آرمیتا دنیوی</h4></a>
+
+                                         {% if next_post %}
+                                            <a  href="{% url 'blog:single' next_post.pk %}">Next Post: {{ next_post.title }}</a>
+
                                     </div>
                                     <div class="arrow">
                                         <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
                                     </div>
                                     <div class="thumb">
-                                        <a href="#"><img class="img-fluid" src="{% static 'img//blog/next.jpg' %}" alt=""></a>
+                                        <a class="imgnextpage" href="{% url 'blog:single' next_post.pk %}"><img  src="{{post.image.url}}" alt=""></a>
+                                        {% endif %}
                                     </div>										
                                 </div>									
                             </div>
@@ -318,7 +323,7 @@
                                 </div>
                                 <div class="br"></div>
                             </aside>
-                            <aside class="single_sidebar_widget ads_widget">
+                            {% include 'blog/blog_advertise.html' %}
                                 <a href="#"><img class="img/-fluid" src="{% static 'img//blog/add.jpg' %}" alt=""></a>
                                 <div class="br"></div>
                             </aside>
