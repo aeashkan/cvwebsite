@@ -171,40 +171,34 @@
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
                             <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
+                              {% if posts.has_previous %}
+                                <a href="?page={{ posts.previous_page_number }}" class="page-link" aria-label="Previous">
 		                                    <span aria-hidden="true">
 		                                        <span class="lnr lnr-chevron-right"></span>
 		                                    </span>
                                 </a>
+                              {% endif %}
                             </li>
-                            <li class="page-item"><a href="#" class="page-link">۰۱</a></li>
-                            <li class="page-item active"><a href="#" class="page-link">۰۲</a></li>
-                            <li class="page-item"><a href="#" class="page-link">۰۳</a></li>
-                            <li class="page-item"><a href="#" class="page-link">۰۴</a></li>
-                            <li class="page-item"><a href="#" class="page-link">۰۹</a></li>
+                          {% for i in posts.paginator.page_range %}
+                            <li class="page-item"><a href="?page={{i}}" class="page-link">{{i}}</a></li>
+                          {% endfor %}
+
+                          {% if post.has_next %}
                             <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
+                                <a href="?page={{ posts.next_page_number }}" class="page-link" aria-label="Next">
 		                                    <span aria-hidden="true">
 		                                        <span class="lnr lnr-chevron-left"></span>
 		                                    </span>
                                 </a>
                             </li>
+                          {% endif %}
                         </ul>
                     </nav>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget search_widget">
-                        <div class="input-group">
-                            <input type="text" class="form-control padd-src" placeholder="جستجو پست">
-                            <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><i
-                                                    class="lnr lnr-magnifier"></i></button>
-                                        </span>
-                        </div><!-- /input-group -->
-                        <div class="br"></div>
-                    </aside>
+                    {% include 'blog/blog-search.html' %}
                     {% include 'blog/blog-writer.html' %}
                     {% latest_posts %}
                     {% include 'blog/blog_advertise.html' %}

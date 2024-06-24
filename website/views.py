@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from website.forms import ContactForm
 
 
 # Create your views here.
@@ -10,8 +11,17 @@ def index_view(request):
 
 
 def about_view(request):
+
     return render(request, 'website/about.html')
 
 
 def contact_view(request):
-    return render(request, 'website/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/contact')
+        else:
+            return redirect('/contact')
+    form = ContactForm()
+    return render(request, 'website/contact.html', {'form': form})
