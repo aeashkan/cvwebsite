@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_jalali.db import models as jmodels
+from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 # Create your models here.
@@ -21,6 +23,7 @@ class Post(models.Model):
     updated_date = jmodels.jDateTimeField(auto_now=True)
     published_date = jmodels.jDateTimeField(null=True, blank=True)
     category = models.ManyToManyField(Category)
+    tags = TaggableManager()
 
     objects = jmodels.jManager()
 
@@ -29,3 +32,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_date']
+
+
+    def get_absolute_url(self):
+        return reverse('blog:single', kwargs={'pid': self.id})

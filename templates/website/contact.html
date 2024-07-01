@@ -74,6 +74,13 @@
                             </div>
                             <div class="col-md-12 text-right">
                                 <button type="submit" value="submit" class="btn submit_btn" style="float: left;" >ارسال دیدگاه</button>
+                                {% if messages %}
+                                <ul class="messages">
+                                {% for message in messages %}
+                                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %}
+                                </ul>
+                                {% endif %}
                             </div>
                         </form>
                     </div>

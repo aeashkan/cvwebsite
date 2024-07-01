@@ -1,0 +1,9 @@
+{% load static %}
+<aside class="single-sidebar-widget tag_cloud_widget">
+                        <h4 class="widget_title">تگ های ابری</h4>
+                        <ul class="list">
+                           {% for tag in post.tags.all %}
+                            <li><a href="#">{{tag.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </aside>

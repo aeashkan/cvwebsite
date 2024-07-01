@@ -147,7 +147,7 @@
                                 </div>
 
                                 <ul class="blog_meta list" dir="ltr">
-                                    <li><a href="#">{{post.author.get_full_name}}<i class="lnr lnr-user"></i></a></li>
+                                    <li><a href="{% url 'blog:author' author_username=post.author.username %}">{{post.author.get_full_name}}<i class="lnr lnr-user"></i></a></li>
                                     <li><a href="#">{{post.published_date|jformat:"%A %d %B %Y %H:%M"}}<i
                                             class="lnr lnr-calendar-full"></i></a></li>
                                     <li><a href="#">{{post.counted_view}}<i class="lnr lnr-eye"></i></a></li>
@@ -224,23 +224,7 @@
                         <p class="text-bottom">هر وقت بخواهید میتوانید لغو عضویت کنید</p>
                         <div class="br"></div>
                     </aside>
-                    <aside class="single-sidebar-widget tag_cloud_widget">
-                        <h4 class="widget_title">تگ های ابری</h4>
-                        <ul class="list">
-                            <li><a href="#">تکنولوژی</a></li>
-                            <li><a href="#">مد</a></li>
-                            <li><a href="#">معماری</a></li>
-                            <li><a href="#">مد</a></li>
-                            <li><a href="#">غذا</a></li>
-                            <li><a href="#">تکنولوژی</a></li>
-                            <li><a href="#">زندگی</a></li>
-                            <li><a href="#">هنر</a></li>
-                            <li><a href="#">ماجراجویی</a></li>
-                            <li><a href="#">غذا</a></li>
-                            <li><a href="#">زندگی</a></li>
-                            <li><a href="#">ماجراجویی</a></li>
-                        </ul>
-                    </aside>
+                    {% include 'blog/blog-tags.html' %}
                 </div>
             </div>
         </div>

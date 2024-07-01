@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from website.forms import ContactForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -19,8 +20,7 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/contact')
+            form.save() and messages.success(request, 'پیام شما ارسال شد')
         else:
             return redirect('/contact')
     form = ContactForm()
